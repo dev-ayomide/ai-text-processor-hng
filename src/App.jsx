@@ -20,9 +20,7 @@ function App() {
       return results[0]?.detectedLanguage || null;
     } catch (detectionError) {
       console.error("Language detection error:", detectionError);
-      setError(
-        "Could not detect the language. Please try again."
-      );
+      setError("Could not detect the language. Please try again.");
       return null;
     }
   }, []);
@@ -44,9 +42,7 @@ function App() {
       return summary?.summary || summary || "Failed to generate summary.";
     } catch (error) {
       console.error("Summarization error:", error);
-      setError(
-        "Summarization failed. Please check your input and try again."
-      );
+      setError("Summarization failed. Please check your input and try again.");
       return null;
     }
   }, []);
@@ -66,9 +62,7 @@ function App() {
       return await translator.translate(text);
     } catch (error) {
       console.error("Translation error:", error);
-      setError(
-        "Translation failed. Check if the language pair is supported."
-      );
+      setError("Translation failed. Check if the language pair is supported.");
       return null;
     }
   }, []);
